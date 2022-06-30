@@ -2,7 +2,7 @@
 import MovieItem  from "./MovieItem"
 
 
-const MoviePopularList = ({movies}) => {
+const MovieList = ({movies}) => {
    
     
 
@@ -17,4 +17,4 @@ const MoviePopularList = ({movies}) => {
     )
 }
 
-export default MoviePopularList;
+export default MovieList;

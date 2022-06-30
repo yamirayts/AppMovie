@@ -5,7 +5,7 @@ const IdMovieDetail = ({detailId}) => {
           <div className="card-body">
             <h5 className="card-title">{detailId.original_title}</h5>
             <p className="card-text">{detailId.overview}</p>
-            <p className="card-text"><small class="text-muted"> &#x1F525; {detailId.popularity}</small></p>
+            <p className="card-text"><small className="text-muted"> &#x1F525; {detailId.popularity}</small></p>
           </div>
      </>
             

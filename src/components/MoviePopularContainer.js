@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import MoviePopularList from "./MoviePopularList";
+import MovieList from "./MovieList";
 
 function MoviePopularContainer (){
     const [movies, setMovies] = useState([])
@@ -21,7 +21,7 @@ function MoviePopularContainer (){
     
 return(
     <div className="">
-        <MoviePopularList movies={movies}/>
+        <MovieList movies={movies}/>
     </div>
 )
 
