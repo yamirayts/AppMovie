@@ -16,8 +16,18 @@ function Filter({ratings}) {
   const stars = Array(5).fill(0)
 
   const handleClick = value => {
-    setCurrentValue(value)
+
+    if (currentValue === value) {
+      setCurrentValue(0);
+      ratings(0)
+
+      console.log('if');
+    } else {
+      setCurrentValue(value)
     ratings(value)
+      console.log('else');
+    }
+    
   }
 
   const handleMouseOver = newHoverValue => {
@@ -31,8 +41,9 @@ function Filter({ratings}) {
 
   return (
     <div style={styles.container}>
-      <h2> Ratings </h2>
+     <h5 className="list-group-item text-muted"> Ratings:   </h5>
       <div style={styles.stars}>
+      
         {stars.map((_, index) => {
           return (
             <FaStar
@@ -61,7 +72,8 @@ const styles = {
   container: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    marginBottom: "20px"
   },
   stars: {
     display: "flex",
