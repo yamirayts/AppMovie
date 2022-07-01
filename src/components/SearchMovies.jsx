@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import Lottie from 'lottie-react'
-import axios from "axios";
-
+import { getMoviesByQuery } from "../api/movies";
 import MovieList from "./MovieList"
 import Filter from "./Filter"
 import loader from '../assets/loader.json';
@@ -28,14 +27,12 @@ const SearchMovies = () => {
         const api = async() =>{
 
             try{
-                const BASEURL = process.env.REACT_APP_BASE_URL
-                const APIKEY = process.env.REACT_APP_API_KEY
-                const resultSearch = await axios.get(`${BASEURL}/search/movie${APIKEY}&query=${searchLink}`)
+                const resultSearch = await getMoviesByQuery(searchLink)
 
                     if (ratingValue==0){
                         setSearch(resultSearch.data.results)
                     }else{
-                        let resultSearchFilter = resultSearch.data.results.filter(movie=> movie.vote_average<=ratingValue && movie.vote_average>ratingValue-2 )
+                        const resultSearchFilter = resultSearch.data.results.filter(movie=> movie.vote_average<=ratingValue && movie.vote_average>ratingValue-2 )
                         setSearch(resultSearchFilter)
                     }
             } catch(error){

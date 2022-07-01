@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import Lottie from 'lottie-react'
-import axios from "axios";
+import { getPopularMovies } from "../api/movies";
 
 import MovieList from "./MovieList";
 import loader from '../assets/loader.json';
 
 import "../styls/loader.css"
 
-function MoviePopularContainer (){
+function MoviePopularContainer () {
 
     const [movies, setMovies] = useState([])
     const [loading, setLoading] = useState(true)
@@ -16,11 +16,8 @@ function MoviePopularContainer (){
 
         const api = async() =>{
         try{
-            const BASEURL = process.env.REACT_APP_BASE_URL
-            const APIKEY = process.env.REACT_APP_API_KEY
-            const list = await axios.get(`${BASEURL}/movie/popular${APIKEY}`)
-            setMovies(list.data.results)
-            
+            const list = await getPopularMovies()
+            setMovies(list.data.results)          
         } catch(error){
             console.log(error)
         }finally{
@@ -59,11 +56,6 @@ function MoviePopularContainer (){
             }
         </>
     )
-
-
 }
 
-
 export default MoviePopularContainer
-
-
