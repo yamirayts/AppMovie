@@ -1,0 +1,25 @@
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filterStars {
+    display: flex;
+    flex-direction: row;
+}
+
+.filterStar {
+    size: 24px;
+    margin-right: 10px;
+    cursor: pointer
+}
+
+.filterStarSelected {
+    color: #FFBA5A;
+}
+
+.filterStarUnselected {
+    color: #a9a9a9;
+}

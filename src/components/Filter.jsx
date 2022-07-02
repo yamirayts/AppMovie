@@ -1,14 +1,8 @@
 import { useState } from "react";
 import '../App.css';
 import { FaStar } from "react-icons/fa";
-
-const colors = {
-    orange: "#FFBA5A",
-    grey: "#a9a9a9"
-    
-};
-
-
+import classNames from "classnames";
+import "../styles/filter.css"
 
 function Filter({ratings}) {
   const [currentValue, setCurrentValue] = useState(0);
@@ -20,12 +14,9 @@ function Filter({ratings}) {
     if (currentValue === value) {
       setCurrentValue(0);
       ratings(0)
-
-      console.log('if');
     } else {
       setCurrentValue(value)
-    ratings(value)
-      console.log('else');
+      ratings(value)
     }
     
   }
@@ -40,63 +31,28 @@ function Filter({ratings}) {
 
 
   return (
-    <div style={styles.container}>
-     <h5 className="list-group-item text-muted"> Ratings:   </h5>
-      <div style={styles.stars}>
-      
+    <div className="filterContainer">
+      <h5 className="list-group-item text-muted"> Ratings:   </h5>
+      <div className="filterStars">  
         {stars.map((_, index) => {
+          const isFilled = (hoverValue || currentValue) > index
+
           return (
             <FaStar
               key={index}
-              size={24}
               onClick={() => handleClick(index + 1)}
               onMouseOver={() => handleMouseOver(index + 1)}
               onMouseLeave={handleMouseLeave}
-              color={(hoverValue || currentValue) > index ? colors.orange : colors.grey}
-              style={{
-                marginRight: 10,
-                cursor: "pointer"
-              }}
+              className={classNames("filterStar", 
+                { "filterStarSelected": isFilled, 
+                "filterStarUnselected": !isFilled
+                })}
             />
           )
         })}
       </div>
-     
-      
     </div>
   );
 };
-
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    marginBottom: "20px"
-  },
-  stars: {
-    display: "flex",
-    flexDirection: "row",
-  },
-  textarea: {
-    border: "1px solid #a9a9a9",
-    borderRadius: 5,
-    padding: 10,
-    margin: "20px 0",
-    minHeight: 100,
-    width: 300
-  },
-  button: {
-    border: "1px solid #a9a9a9",
-    borderRadius: 5,
-    width: 300,
-    padding: 10,
-  }
-
-};
-
-
-
 
 export default Filter;
