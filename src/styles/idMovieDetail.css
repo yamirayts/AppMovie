@@ -1,0 +1,18 @@
+.movieDetailContainer {
+    padding-top: 20px;
+}
+
+.popularityContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.movieImage {
+    margin: auto;
+}
+
+@media (max-width: 576px) {
+    .movieImage {
+      width: 100%;
+    }
+}
