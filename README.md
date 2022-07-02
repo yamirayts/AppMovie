@@ -28,6 +28,14 @@ Gives us the ability to conditionally applies css classes to elements.
 
 Bootstrap was implemented as grid system.
 
-#### Comments
+## Comments
 
 The .env was added to the .gitignore and uploaded to the repository so that when the repo is cloned you will have the api configuration and can fetch the movies.
+
+## How run the project
+
+1- git clone https://github.com/yamirayts/AppMovie.git
+
+2- npm i
+
+3- npm start
