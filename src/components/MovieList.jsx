@@ -14,7 +14,7 @@ const MovieList = ({movies}) => {
                 <div className="containerMovieList">
                     <div className="row row-cols-2 row-cols-md-4 g-4">
                         {movies.map((movie) =>
-                        <MovieItem movie={movie}/>
+                            <MovieItem key={movie.id} movie={movie}/>
                         )}
                     </div>
                 </div>
