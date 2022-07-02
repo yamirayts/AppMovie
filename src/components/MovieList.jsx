@@ -8,7 +8,7 @@ const MovieList = ({movies}) => {
 
     return(
         <>
-        {movies.length==0?
+        {movies.length===0?
                 <h1 className="col">Upppss! There are no movies with these stars</h1>
             :
                 <div className="containerMovieList">

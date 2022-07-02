@@ -8,7 +8,7 @@ const MovieItem = ({movie}) => {
         <div className="col">
             <div className="card h-100">
                 <Link to={`/catalog/movies/${movie.id}`}>
-                    <img className='card-img-top' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
+                    <img className='card-img-top' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={`${movie.original_title}`}/>
                 </Link>
                 <div className="card-body">
                     <Link to={`/catalog/movies/${movie.id}`}>

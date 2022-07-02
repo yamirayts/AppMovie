@@ -29,7 +29,7 @@ const SearchMovies = () => {
             try{
                 const resultSearch = await getMoviesByQuery(searchLink)
 
-                    if (ratingValue==0){
+                    if (ratingValue===0){
                         setSearch(resultSearch.data.results)
                     }else{
                         const resultSearchFilter = resultSearch.data.results.filter(movie=> movie.vote_average<=ratingValue && movie.vote_average>ratingValue-2 )
