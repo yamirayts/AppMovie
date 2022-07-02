@@ -1,21 +1,24 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 const SearchArea = () => {
-
+  let navigate = useNavigate()
   const [search, setSearch] = useState("")
-  const  handleChange = (e) =>{
+  
+  const  handleChange = (e) => {
         setSearch(e.target.value)
-        }
+      }
+
+  const handleSubmit =(e)=> {
+      e.preventDefault()
+      navigate(`/search/movies/${search}`, { replace: true })
+  }
 
   return(
-      <div className="input-group mb-3 ">
+      <form onSubmit={handleSubmit} className="input-group mb-3 ">
         <input onChange={handleChange} type="text" className="form-control" placeholder="Search Movies" aria-label="Recipient's username" aria-describedby="button-addon2"/>
-        <Link to={`/search/movies/${search}`}>
-          <button className="btn btn-secondary" type="button" id="button-addon2">Search</button>
-        </Link>
-      </div>
+        <input className="btn btn-secondary" type="submit" id="button-addon2" value="Search" />
+      </form>
     )
 }
 
