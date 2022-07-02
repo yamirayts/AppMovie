@@ -1,7 +1,7 @@
 
 import SearchArea from './SearchArea';
 
-import "../styls/searcharea.css"
+import "../styles/searcharea.css"
 
 const Header = () => {
 

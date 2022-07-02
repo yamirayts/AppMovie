@@ -5,7 +5,7 @@ import { getPopularMovies } from "../api/movies";
 import MovieList from "./MovieList";
 import loader from '../assets/loader.json';
 
-import "../styls/loader.css"
+import "../styles/loader.css"
 
 function MoviePopularContainer () {
 

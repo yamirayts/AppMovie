@@ -1,7 +1,7 @@
 
 import MovieItem  from "./MovieItem"
 
-import "../styls/movieList.css"
+import "../styles/movieList.css"
 
 
 const MovieList = ({movies}) => {

@@ -6,7 +6,7 @@ import MovieList from "./MovieList"
 import Filter from "./Filter"
 import loader from '../assets/loader.json';
 
-import "../styls/loader.css"
+import "../styles/loader.css"
 
 
 const SearchMovies = () => {
