@@ -10,7 +10,7 @@ const IdMovieDetail = ({detailId}) => {
             <h5 className="card-title">{detailId.original_title}</h5>
             <p className="card-text">{detailId.overview}</p>
             <div className="card-text popularityContainer">
-              <small className="list-group-item text-muted">&#11088;{detailId.vote_average}</small>
+              <small className="list-group-item text-muted">&#128077; {detailId.vote_average}</small>
               <small className="text-muted"> &#x1F525; {detailId.popularity}</small>
             </div>
           </div>

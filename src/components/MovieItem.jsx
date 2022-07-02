@@ -17,8 +17,8 @@ const MovieItem = ({movie}) => {
                 </div>
                 <div className="card-footer">
                     <div className="list-group list-group-flush">
-                        <small className="text-muted">{movie.vote_average}&#11088;</small>
-                        <small className="text-muted">Popularity {movie.popularity}&#x1F525;</small>
+                        <small className="text-muted">Votes {movie.vote_average} &#128077;</small>
+                        <small className="text-muted">Popularity {movie.popularity} &#x1F525;</small>
                     </div>
                 </div>
             </div>
